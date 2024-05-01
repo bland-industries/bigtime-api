@@ -111,13 +111,13 @@ class BigtimeApi
         try {
             $res = $client->send($request);
         } catch (ServerException $e) {
-            dump(Message::toString($e->getRequest()));
-            dump(Message::toString($e->getResponse()));
+            // dump(Message::toString($e->getRequest()));
+            // dump(Message::toString($e->getResponse()));
 
             return [];
         } catch (ClientException $e) {
-            dump(Message::toString($e->getRequest()));
-            dump(Message::toString($e->getResponse()));
+            // dump(Message::toString($e->getRequest()));
+            // dump(Message::toString($e->getResponse()));
 
             return [];
         }
