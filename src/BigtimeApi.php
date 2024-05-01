@@ -3,14 +3,14 @@
 namespace BlandIndustries\BigtimeApi;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Message;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Psr7\Message;
+use GuzzleHttp\Psr7\Request;
 
 class BigtimeApi
 {
-    static $token;
+    public static $token;
 
     public function getToken()
     {
@@ -19,12 +19,12 @@ class BigtimeApi
         }
         $client = new Client();
         $headers = [
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
         ];
         $bodyData = [
-            "UserId" => config('bigtime.user'),
-            "Pwd" => config('bigtime.password'),
-            "firm" => config('bigtime.firm'),
+            'UserId' => config('bigtime.user'),
+            'Pwd' => config('bigtime.password'),
+            'firm' => config('bigtime.firm'),
         ];
         $body = json_encode($bodyData);
         $request = new Request('POST', 'https://iq.bigtime.net/BigtimeData/api/v2/session', $headers, $body);
@@ -32,6 +32,7 @@ class BigtimeApi
         $returnBody = $res->getBody();
         $resData = json_decode($returnBody->getContents(), true);
         static::$token = $resData['token'];
+
         return $resData['token'];
     }
 
@@ -66,9 +67,9 @@ class BigtimeApi
         $body = [
             'ShowCompleted' => true,
             'view' => 'Detailed',
-            'id' => $projectID
+            'id' => $projectID,
         ];
-        $taskData = $this->request("/Task/ListByProject", 'GET', $body);
+        $taskData = $this->request('/Task/ListByProject', 'GET', $body);
 
         return $taskData;
     }
@@ -82,12 +83,14 @@ class BigtimeApi
             'view' => 'Detailed',
         ];
         $data = $this->request('/time/sheet', 'GET', $body);
+
         return $data;
     }
 
     public function saveTimeEntry($data)
     {
-        $response = $this->request("/Time", 'POST', $data);
+        $response = $this->request('/Time', 'POST', $data);
+
         return $response;
     }
 
@@ -101,21 +104,24 @@ class BigtimeApi
         $headers = [
             'X-Auth-Token' => $token,
             'X-Auth-Realm' => config('bigtime.firm'),
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
         ];
 
-        $request = new Request($method, config('bigtime.url') . $url, $headers, json_encode($body));
+        $request = new Request($method, config('bigtime.url').$url, $headers, json_encode($body));
         try {
             $res = $client->send($request);
         } catch (ServerException $e) {
             dump(Message::toString($e->getRequest()));
             dump(Message::toString($e->getResponse()));
+
             return [];
         } catch (ClientException $e) {
             dump(Message::toString($e->getRequest()));
             dump(Message::toString($e->getResponse()));
+
             return [];
         }
+
         return json_decode($res->getBody()->getContents(), true);
     }
 }

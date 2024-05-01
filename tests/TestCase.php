@@ -2,9 +2,9 @@
 
 namespace BlandIndustries\BigtimeApi\Tests;
 
+use BlandIndustries\BigtimeApi\BigtimeApiServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use BlandIndustries\BigtimeApi\BigtimeApiServiceProvider;
 
 class TestCase extends Orchestra
 {

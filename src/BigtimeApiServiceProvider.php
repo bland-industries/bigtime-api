@@ -4,7 +4,6 @@ namespace BlandIndustries\BigtimeApi;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use BlandIndustries\BigtimeApi\Commands\BigtimeApiCommand;
 
 class BigtimeApiServiceProvider extends PackageServiceProvider
 {
