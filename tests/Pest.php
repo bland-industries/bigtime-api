@@ -1,5 +1,5 @@
 <?php
 
-use bland-industries\BigtimeApi\Tests\TestCase;
+use BlandIndustries\BigtimeApi\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

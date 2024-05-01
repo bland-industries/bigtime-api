@@ -1,6 +1,6 @@
 <?php
 
-namespace bland-industries\BigtimeApi\Database\Factories;
+namespace BlandIndustries\BigtimeApi\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

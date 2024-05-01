@@ -1,6 +1,6 @@
 <?php
 
-namespace bland-industries\BigtimeApi\Commands;
+namespace BlandIndustries\BigtimeApi\Commands;
 
 use Illuminate\Console\Command;
 

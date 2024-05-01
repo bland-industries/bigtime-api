@@ -1,10 +1,10 @@
 <?php
 
-namespace bland-industries\BigtimeApi;
+namespace BlandIndustries\BigtimeApi;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use bland-industries\BigtimeApi\Commands\BigtimeApiCommand;
+use BlandIndustries\BigtimeApi\Commands\BigtimeApiCommand;
 
 class BigtimeApiServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +17,6 @@ class BigtimeApiServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('bigtime-api')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_bigtime-api_table')
-            ->hasCommand(BigtimeApiCommand::class);
+            ->hasConfigFile();
     }
 }

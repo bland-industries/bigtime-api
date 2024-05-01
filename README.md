@@ -52,8 +52,8 @@ php artisan vendor:publish --tag="bigtime-api-views"
 ## Usage
 
 ```php
-$bigtimeApi = new bland-industries\BigtimeApi();
-echo $bigtimeApi->echoPhrase('Hello, bland-industries!');
+$bigtimeApi = new BlandIndustries\BigtimeApi();
+echo $bigtimeApi->echoPhrase('Hello, BlandIndustries!');
 ```
 
 ## Testing

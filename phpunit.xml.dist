@@ -16,7 +16,7 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="bland-industries Test Suite">
+        <testsuite name="Bland Industries Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

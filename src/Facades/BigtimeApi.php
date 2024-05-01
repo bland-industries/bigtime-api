@@ -1,16 +1,16 @@
 <?php
 
-namespace bland-industries\BigtimeApi\Facades;
+namespace BlandIndustries\BigtimeApi\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \bland-industries\BigtimeApi\BigtimeApi
+ * @see \BlandIndustries\BigtimeApi\BigtimeApi
  */
 class BigtimeApi extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \bland-industries\BigtimeApi\BigtimeApi::class;
+        return \BlandIndustries\BigtimeApi\BigtimeApi::class;
     }
 }

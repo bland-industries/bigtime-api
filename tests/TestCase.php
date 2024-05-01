@@ -1,10 +1,10 @@
 <?php
 
-namespace bland-industries\BigtimeApi\Tests;
+namespace BlandIndustries\BigtimeApi\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use bland-industries\BigtimeApi\BigtimeApiServiceProvider;
+use BlandIndustries\BigtimeApi\BigtimeApiServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'bland-industries\\BigtimeApi\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'BlandIndustries\\BigtimeApi\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

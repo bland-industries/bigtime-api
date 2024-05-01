@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "bland-industries\\BigtimeApi\\": "src/",
-            "bland-industries\\BigtimeApi\\Database\\Factories\\": "database/factories/"
+            "BlandIndustries\\BigtimeApi\\": "src/",
+            "BlandIndustries\\BigtimeApi\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "bland-industries\\BigtimeApi\\Tests\\": "tests/",
+            "BlandIndustries\\BigtimeApi\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -72,10 +72,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "bland-industries\\BigtimeApi\\BigtimeApiServiceProvider"
+                "BlandIndustries\\BigtimeApi\\BigtimeApiServiceProvider"
             ],
             "aliases": {
-                "BigtimeApi": "bland-industries\\BigtimeApi\\Facades\\BigtimeApi"
+                "BigtimeApi": "BlandIndustries\\BigtimeApi\\Facades\\BigtimeApi"
             }
         }
     },
