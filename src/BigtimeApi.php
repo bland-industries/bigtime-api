@@ -22,9 +22,9 @@ class BigtimeApi
             'Content-Type' => 'application/json',
         ];
         $bodyData = [
-            'UserId' => config('bigtime.user'),
-            'Pwd' => config('bigtime.password'),
-            'firm' => config('bigtime.firm'),
+            'UserId' => config('bigtime-api.user'),
+            'Pwd' => config('bigtime-api.password'),
+            'firm' => config('bigtime-api.firm'),
         ];
         $body = json_encode($bodyData);
         $request = new Request('POST', 'https://iq.bigtime.net/BigtimeData/api/v2/session', $headers, $body);
@@ -38,7 +38,6 @@ class BigtimeApi
 
     public function getAllClients()
     {
-
         $body = [
             'view' => '',
             'ShowInactive' => '',
@@ -103,11 +102,11 @@ class BigtimeApi
         $client = new Client();
         $headers = [
             'X-Auth-Token' => $token,
-            'X-Auth-Realm' => config('bigtime.firm'),
+            'X-Auth-Realm' => config('bigtime-api.firm'),
             'Content-Type' => 'application/json',
         ];
 
-        $request = new Request($method, config('bigtime.url').$url, $headers, json_encode($body));
+        $request = new Request($method, config('bigtime-api.url').$url, $headers, json_encode($body));
         try {
             $res = $client->send($request);
         } catch (ServerException $e) {
