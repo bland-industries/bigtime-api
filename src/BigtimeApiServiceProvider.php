@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace bland-industries\BigtimeApi;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use bland-industries\BigtimeApi\Commands\BigtimeApiCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class BigtimeApiServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('bigtime-api')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_bigtime-api_table')
+            ->hasCommand(BigtimeApiCommand::class);
     }
 }

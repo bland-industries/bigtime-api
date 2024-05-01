@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace bland-industries\BigtimeApi\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class BigtimeApiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'bigtime-api';
 
     public $description = 'My command';
 
